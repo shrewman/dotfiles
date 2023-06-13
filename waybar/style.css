@@ -1,0 +1,134 @@
+* {
+    font-family: JetBrainsMono, Iosevka Nerd Font, feather;
+    font-size: 14px;
+}
+
+window#waybar {
+	background-color: #2d1c48;
+    color: #f5c4b3;
+    transition-property: background-color;
+    transition-duration: .5s;
+	border-radius: 0;
+}
+
+.modules-right {
+	border-radius: 0 0 0px 15px;
+    background-color: transparent;
+}
+
+.modules-left {
+	border-radius: 0 0 15px 0px;
+    background-color: transparent;
+}
+
+#workspaces button {
+    padding: 0px 10px;
+    background-color: transparent;
+    color: #865a95;
+
+    box-shadow: inset 0 -3px transparent;
+    border-radius: 0;
+}
+
+#workspaces button.focused {
+    color: #f5c4b3;
+    border-top: solid 2px #f5c4b3;
+    box-shadow: inset 0 -3px transparent;
+}
+
+#workspaces button.urgent {
+    background-color: #c06d97;
+}
+
+#mode {
+    background-color: #c06d97;
+    color: #f5c4b3;
+    border-bottom: 3px solid #f5c4b3;
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#clock,
+#mode,
+#idle_inhibitor,
+#mpd {
+    padding: 0 10px;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+.custom-spotify {
+	padding: 0 10px;
+	border-radius: 0 0 15px 15px;
+	border-top: solid 2px #50fa7b;
+}
+
+#battery.charging, #battery.plugged {
+    color: #50fa7b;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #c06d97;
+    color: #f5c4b3;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu,
+#disk,
+#pulseaudio,
+#network,
+#network.disconnected,
+#backlight,
+#memory,
+#clock {
+    background-color: transparent;
+}
+
+#custom-media.custom-spotify {
+    border-top: #50fa7b;
+}
+
+#tray {
+	margin: 0;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #c06d97;
+}
+
+#language {
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}

@@ -1,0 +1,8 @@
+alacritty = "/home/mike/.config/alacritty/alacritty.yml"
+conky = "/home/mike/.config/conky"
+foot = "/home/mike/.config/foot/foot.ini"
+i3 = "/home/mike/.config/i3/config"
+polybar = "/home/mike/.config/polybar/colors.ini"
+rofi = "/home/mike/.config/rofi"
+sway = "/home/mike/.config/sway/config"
+waybar = "/home/mike/.config/waybar"

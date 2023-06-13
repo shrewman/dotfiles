@@ -1,0 +1,14 @@
+#!/bin/bash
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+KEY=$(cat $SCRIPT_DIR/air-raid.key)
+
+QUEUE=$(curl -s "https://alerts.com.ua/api/states?short" \
+	-H "X-API-Key:$KEY" |\
+	egrep '"id":14,"alert":.{4,5}}' -o |\
+	grep -o 'true')
+
+if [[ "$QUEUE" == "true" ]]; then
+	echo "Air alert"
+else
+	echo
+fi

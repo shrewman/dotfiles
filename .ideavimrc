@@ -1,0 +1,45 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Configuration ---------------------------
+set relativenumber
+
+""" Mappings --------------------------------
+map <leader>d <Action>(Debug)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>j <Action>(StepInto)
+map <leader>k <Action>(StepOut)
+map <leader>c <Action>(Stop)
+
+map <leader>f <Action>(QuickJavaDoc)
+map <leader>e <Action>(ShowErrorDescription)
+
+map <leader>r <Action>(RenameElement)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+map <leader>o <Action>(FileStructurePopup)
+
+map <leader>g <Action>(GotoDeclaration)

@@ -1,0 +1,15 @@
+[color]
+background = #1e1d2f
+background-alt = #292838
+primary = #7aa2f7
+primary-alt = #50fa7b
+foreground = #f8f8f2
+
+black = #1e1d2f
+red = #e64553
+green = #50fa7b
+yellow = #f1fa8c
+blue = #7aa2f7
+pink = #ff79c6
+cyan = #91d7e3
+white = #f8f8f2

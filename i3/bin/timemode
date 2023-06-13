@@ -1,0 +1,3 @@
+i3-msg mode "$1"
+sleep "$2"
+i3-msg mode default

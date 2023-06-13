@@ -1,0 +1,152 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["custom/spotify"],
+    "modules-right": ["network", "pulseaudio", "sway/language", "battery", "clock", "tray"],
+
+    // Modules configuration
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "﬏",
+            "5": "",
+            "6": "",
+            "7": "",
+            "9": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"bold\">{}</span>",
+        "format": "<span>{}</span>"
+    },
+
+//    "mpd": {
+//        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+//        "format-disconnected": "Disconnected ",
+//        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+//        "unknown-tag": "N/A",
+//        "interval": 2,
+//        "consume-icons": {
+//            "on": " "
+//        },
+//        "random-icons": {
+//            "off": "<span color=\"#f53c3c\"></span> ",
+//            "on": " "
+//        },
+//        "repeat-icons": {
+//            "on": " "
+//        },
+//        "single-icons": {
+//            "on": "1 "
+//        },
+//        "state-icons": {
+//            "paused": "",
+//            "playing": ""
+//        },
+//        "tooltip-format": "MPD (connected)",
+//        "tooltip-format-disconnected": "MPD (disconnected)"
+//    },
+
+    "tray": {
+        "spacing": 10
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d.%m.%Y}"
+    },
+
+//    "temperature": {
+//        // "thermal-zone": 2,
+//        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+//        "critical-threshold": 80,
+//        // "format-critical": "{temperatureC}°C {icon}",
+//        "format": "{temperatureC}°C {icon}",
+//        "format-icons": ["", "", ""]
+//    },
+
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+
+		"on-scroll-up": "brightnessctl set 5+",
+		"on-scroll-down": "brightnessctl set 5-"
+    },
+
+    "network": {
+        "format-wifi": "{signalStrength}% {essid} ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+		"on-click-right": "nm-connection-editor"
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-source": "{volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click-right": "pavucontrol"
+    },
+
+	"custom/spotify": {
+		"exec": "python3 ~/scripts/spotify-module.py --player spotify",
+		"format": "<span color=\"#50fa7b\">{icon}</span> {}",
+		"format-icons": [""],
+		"return-type": "json",
+		"on-click": "playerctl -p spotify play-pause",
+		"on-click-right": "playerctl -p spotify next",
+		"on-scroll-up": "playerctl -p spotify volume 0.05+",
+		"on-scroll-down": "playerctl -p spotify volume 0.05-"
+	},
+
+	"custom/test": {
+		"exec": "python3 ~/scripts/electricity.py"
+	}
+
+}
+
