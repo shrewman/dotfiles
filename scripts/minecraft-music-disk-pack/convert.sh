@@ -8,7 +8,7 @@ declare -a music=("$music_dir"/*)
 declare -a records=("$records_dir"/*)
 
 if [ ! -d "$pack" ] || [ ! -d "$music_dir" ]; then 
-	echo "Format: convert.sh music_dir resourcepack_dir"
+	echo "Format: convert.sh music_dir resourcepack_dir [--myself] [--random]"
 	exit 1
 fi
 
