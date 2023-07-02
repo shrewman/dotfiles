@@ -5,6 +5,7 @@ mkdir -p ~/.local/share/fonts
 cp ~/.dotfiles/fonts/* ~/.local/share/fonts
 
 
+ln -s ~/.dotfiles/.themes ~/.themes
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.oh-my-zsh ~
