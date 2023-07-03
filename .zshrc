@@ -102,3 +102,4 @@ function scpvm {
 }
 
 source /home/mike/Git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH=$PATH:/home/mike/.spicetify

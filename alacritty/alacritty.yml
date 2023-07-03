@@ -16,9 +16,9 @@ colors:
     focused_match:
       foreground: '#292838'
       background: '#f1fa8c'
-    bar:
-      background: '#1e1d2f'
-      foreground: '#f8f8f2'
+        #    bar:
+        #      background: '#1e1d2f'
+        #      foreground: '#f8f8f2'
   hints:
     start:
       foreground: '#1e1d2f'

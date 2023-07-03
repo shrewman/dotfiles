@@ -52,13 +52,13 @@ bindsym $Mod+Print exec scrot -u '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection cli
 
 # DEFAULT APPLICATIONS: {
 
-set $terminal		   alacritty
-set $terminal-exec	   alacritty --command
-set $terminal-floating alacritty --class="floating"
+set $terminal		   kitty
+set $terminal-exec	   kitty
+set $terminal-floating kitty --class="floating"
 
 set $browser		brave-browser
 set $email      	mailspring
-set $file-manager	alacritty --command zsh --exec /bin/ranger
+set $file-manager	alacritty --command ranger
 set $ide			code 
 set $office			onlyoffice-desktopeditors
 set $photo-editor	flatpak run org.gimp.GIMP
@@ -115,11 +115,11 @@ exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec easyeffects --gapplication-service
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b 
 # exec --no-startup-id ~/scripts/autolock.sh User
-set $wallpaper ~/Изображения/wallpapers/57682-devushka_anime_lico_vektor2.jpg
 
-exec sleep 5; zathura ~/Документы/vereitina.pdf
+exec sleep 5; zathura ~/onaft/vereitina.pdf
 exec ~/.config/conky/start.sh -t
 # exec --no-startup-id flatpak run org.telegram.desktop
+set $wallpaper ~/Pictures/1625656505_19-kartinkin-com-p-oboi-minimalizm-krasivie-20.jpg
 exec --no-startup-id feh --bg-fill $wallpaper --no-fehbg
 #exec --no-startup-id ~/.local/bin/xwinwrap -ov -ni -fs -- mpv -vo x11 -wid WID --keepaspect=no --loop ~/Pictures/gartic-phone/album_2022-05-04_21-51-36.gif
 
@@ -277,7 +277,7 @@ set $background-alt #292838
 set $primary #7aa2f7
 set $primary-alt #50fa7b
 set $foreground #f8f8f2
-set $urgent #e64553
+set $urgent #f92672
 
 # class            border			bg				foreground    indicator     child_border
 client.focused     $background		$background		$foreground   $primary		$primary
@@ -288,7 +288,7 @@ client.placeholder #000000			$background		$foreground   #000000       $backgroun
 client.background  $background
 
 # disable title bars
-for_window [class="^.*"] border pixel 4
+ for_window [class="^.*"] border pixel 4
 hide_edge_borders smart
 
 # gaps outer 8
@@ -330,9 +330,9 @@ mode "launch" {
 bindsym $Mod+A exec ~/.config/i3/bin/timemode "launch" 1
 
 # mode "exit" {
-# 	bindsym e exec --no-startup-id ~/.config/i3/bin/exit.sh logout
-# 	bindsym r exec --no-startup-id ~/.config/i3/bin/exit.sh reboot
-# 	bindsym s exec --no-startup-id ~/.config/i3/bin/exit.sh shutdown
+# 	bindsym e exec --no-startup-id ~/.config/i3/scripts/i3exit.sh logout
+# 	bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot
+# 	bindsym s exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown
 # 
 #     bindsym Return mode "default"
 #     bindsym Escape mode "default"
@@ -356,6 +356,7 @@ exec --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput 
 # Keyboard configuration
 exec --no-startup-id "setxkbmap -layout us,ru -option grp:alt_shift_toggle caps:escape"
 bindsym $Mod+Control+U exec --no-startup-id ~/.config/i3/bin/toggle-language.sh
+
 exec --no-startup-id xset r rate 300 50
 # }
 

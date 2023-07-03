@@ -4,6 +4,7 @@
 mkdir -p ~/.local/share/fonts
 cp ~/.dotfiles/fonts/* ~/.local/share/fonts
 
+ln -s ~/.dotfiles/i3 ~/.config
 
 ln -s ~/.dotfiles/.themes ~/.themes
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
@@ -12,6 +13,7 @@ ln -s ~/.dotfiles/.oh-my-zsh ~
 ln -s ~/.dotfiles/.ideavimrc ~/.ideavimrc
 
 ln -s ~/.dotfiles/alacritty ~/.config
+ln -s ~/.dotfiles/kitty ~/.config
 ln -s ~/.dotfiles/conky ~/.config
 ln -s ~/.dotfiles/dunst ~/.config
 ln -s ~/.dotfiles/flameshot ~/.config
@@ -27,3 +29,5 @@ ln -s ~/.dotfiles/waybar ~/.config
 ln -s ~/.dotfiles/zathura ~/.config
 
 ln -s ~/.dotfiles/scripts ~
+
+pip install i3ipc

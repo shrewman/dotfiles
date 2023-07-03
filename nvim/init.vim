@@ -18,7 +18,7 @@ call plug#begin()
  Plug 'ryanoasis/vim-devicons'
  Plug 'ap/vim-css-color'
 
-"Colorthemes:
+"Colorschemes:
  Plug 'tomasr/molokai'
  Plug 'morhetz/gruvbox'
  Plug 'jonathanfilip/vim-lucius'  " nice white colortheme
@@ -26,10 +26,17 @@ call plug#begin()
  Plug 'ghifarit53/tokyonight-vim' "Tokyonight theme
  Plug 'dracula/vim'
  Plug 'joshdick/onedark.vim' "Onedark
+ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 call plug#end()
 
-colorscheme onedark
-let g:airline_theme = 'onedark'
+let g:catppuccin_flavour = "mocha"
+
+lua << EOF
+require("catppuccin").setup()
+EOF
+colorscheme catppuccin
+
+let g:airline_theme = 'catppuccin'
 
 let mapleader=" "
 map <leader>l
