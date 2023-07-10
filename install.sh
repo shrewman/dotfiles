@@ -12,6 +12,9 @@ ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.oh-my-zsh ~
 ln -s ~/.dotfiles/.ideavimrc ~/.ideavimrc
 
+ln -s ~/.dotfiles/Code/User/keybindings.json ~/.config/Code/User
+ln -s ~/.dotfiles/Code/User/settings.json ~/.config/Code/User
+
 ln -s ~/.dotfiles/alacritty ~/.config
 ln -s ~/.dotfiles/kitty ~/.config
 ln -s ~/.dotfiles/conky ~/.config

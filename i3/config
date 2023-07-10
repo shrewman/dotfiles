@@ -59,7 +59,7 @@ set $terminal-floating kitty --class="floating"
 set $browser		brave-browser
 set $email      	mailspring
 set $file-manager	alacritty --command ranger
-set $ide			code 
+set $ide			code # flatpak run com.visualstudio.code 
 set $office			onlyoffice-desktopeditors
 set $photo-editor	flatpak run org.gimp.GIMP
 set $torrent-client transmission-gtk
@@ -74,7 +74,7 @@ bindsym $Alt+D exec --no-startup-id flatpak run com.discordapp.Discord
 # bindsym $Alt+E exec --no-startup-id $email
 bindsym $Alt+F exec --no-startup-id $file-manager
 bindsym $Alt+G exec --no-startup-id $photo-editor
-bindsym $Alt+Q exec --no-startup-id $torrent-client
+# bindsym $Alt+Q exec --no-startup-id $torrent-client
 bindsym $Alt+S exec --no-startup-id flatpak run com.spotify.Client
 bindsym $Alt+T exec --no-startup-id flatpak run org.telegram.desktop
 bindsym $Alt+Z exec --no-startup-id flatpak run us.zoom.Zoom
@@ -117,11 +117,11 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 # exec --no-startup-id ~/scripts/autolock.sh User
 
 exec sleep 5; zathura ~/onaft/vereitina.pdf
-exec ~/.config/conky/start.sh -t
+# exec ~/.config/conky/start.sh -t
 # exec --no-startup-id flatpak run org.telegram.desktop
-set $wallpaper ~/Pictures/1625656505_19-kartinkin-com-p-oboi-minimalizm-krasivie-20.jpg
+
+set $wallpaper /home/mike/Pictures/wallpapers/2002367.jpg
 exec --no-startup-id feh --bg-fill $wallpaper --no-fehbg
-#exec --no-startup-id ~/.local/bin/xwinwrap -ov -ni -fs -- mpv -vo x11 -wid WID --keepaspect=no --loop ~/Pictures/gartic-phone/album_2022-05-04_21-51-36.gif
 
 # }
 
