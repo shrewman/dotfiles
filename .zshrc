@@ -3,7 +3,15 @@ export ZSH="$HOME/.oh-my-zsh"
 export VISUAL="nvim"
 export EDITOR="nvim"
 
-export PATH="/home/mike/.jetbrains/pycharm-2022.2.3/bin:/home/mike/.jetbrains/clion-2022.3/bin:/home/mike/.jetbrains/intellij/bin:/home/mike/.jetbrains/rider/bin:/home/mike/.jdks/openjdk-18.0.2.1/bin:/home/mike/.local/bin:/opt/gradle/gradle-7.6/bin:/home/mike/.jetbrains/webstorm/bin:$PATH"
+export PATH=$PATH:/home/mike/.jetbrains/pycharm-2022.2.3/bin
+export PATH=$PATH:/home/mike/.jetbrains/clion-2022.3/bin
+export PATH=$PATH:/home/mike/.jetbrains/intellij/bin
+export PATH=$PATH:/home/mike/.jetbrains/rider/bin
+export PATH=$PATH:/home/mike/.jetbrains/webstorm/bin
+export PATH=$PATH:/home/mike/.jdks/openjdk-18.0.2.1/bin
+export PATH=$PATH:/home/mike/.local/bin
+export PATH=$PATH:/opt/gradle/gradle-7.6/bin
+export PATH=$PATH:/home/mike/.spicetify
 
 bindkey -v 
 export KEYTIMEOUT=1
@@ -11,32 +19,18 @@ export KEYTIMEOUT=1
 HISTSIZE=10000000
 SAVEHIST=10000000
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="dracula"
+# ~/.dotfiles/.oh-my-zsh/themes/
 ZSH_THEME="gnzh"
+# ZSH_THEME_RANDOM_CANDIDATES=( "gnzh" "strug" )
+# ZSH_THEME="random"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# ~/.dotfiles/.oh-my-zsh/plugins
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git node)
 
 source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
@@ -48,7 +42,14 @@ alias py="python3"
 alias vim="nvim"
 alias мшь="nvim"
 alias sshvm="ssh mike@localhost -p12345"
-alias tdb="mongo -u Cluster11890 -p YnZ5fGtpfXR1 mongodb+srv://cluster11890.kmmzu4j.mongodb.net"
+
+alias mktar="tar -cvzf"
+#	echo Format: mktar \[archive.tar.gz\] \[source directory\]"
+alias untar="tar -xvf"
+#	echo Format: untar \[archive.tar.gz\]"
+
+alias mntwin="sudo mount /dev/nvme0n1p3 /win && echo mounted to /win"
+alias umntwin="sudo umount /dev/nvme0n1p3"
 
 # Config files
 alias conkyrc="nvim -p ~/.config/conky/start.sh \
@@ -70,15 +71,7 @@ alias polyrc="nvim -p ~/.config/polybar/config.ini \
 		    	     ~/.config/polybar/user_modules.ini \
 					 ~/.config/polybar/colors.ini"
 
-alias mktar="tar -cvzf"
-#	echo Format: mktar \[archive.tar.gz\] \[source directory\]"
-alias untar="tar -xvf"
-#	echo Format: untar \[archive.tar.gz\]"
-
-alias mntwin="sudo mount /dev/nvme0n1p3 /win && echo mounted to /win"
-alias umntwin="sudo umount /dev/nvme0n1p3"
-
-alias todo="nvim ~/Документы/todo.txt"
+alias todo="nvim ~/Documents/todo.txt"
 alias doc2pdf="unoconv -f pdf"
 
 # Default applications
@@ -95,11 +88,4 @@ function fftrim {
 
 alias cdporta="~/porta/network/module1/8_NetworkSettings"
 
-function scpvm {
-	[ -z $1 ] && echo "No source specified"
-	[ -z $2 ] && echo "No target specified"
-	scp -r -P 12345 $1 mike@localhost:$2
-}
-
 source /home/mike/Git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH=$PATH:/home/mike/.spicetify
