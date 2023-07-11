@@ -1,8 +1,11 @@
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "workbench.colorTheme": "Catppuccin Mocha",
   "window.closeWhenEmpty": true,
   "window.menuBarVisibility": "toggle",
-  "window.zoomLevel": 1,
   "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.profiles.linux": {
     "bash": {
@@ -52,4 +55,6 @@
       ]
     }
   ],
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": 1,
 }

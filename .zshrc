@@ -39,6 +39,7 @@ fi
 
 # My aliases
 alias py="python3"
+alias tn="ts-node"
 alias vim="nvim"
 alias мшь="nvim"
 alias sshvm="ssh mike@localhost -p12345"
