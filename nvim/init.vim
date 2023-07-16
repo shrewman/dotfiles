@@ -5,6 +5,10 @@ call plug#begin()
  Plug 'lambdalisue/suda.vim'
 
 "Syntax: 
+ Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
  Plug 'Valloric/YouCompleteMe'
  Plug 'pangloss/vim-javascript'
  Plug 'w0rp/ale'
@@ -38,8 +42,11 @@ colorscheme catppuccin
 
 let g:airline_theme = 'catppuccin'
 
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#exec_cmd_async = 1
+
 let mapleader=" "
-map <leader>l
+map <leader>l <Plug>(Prettier)
 
 set undofile
 set undodir=~/.vim/undodir

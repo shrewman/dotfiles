@@ -329,16 +329,6 @@ mode "launch" {
 }
 bindsym $Mod+A exec ~/.config/i3/bin/timemode "launch" 1
 
-# mode "exit" {
-# 	bindsym e exec --no-startup-id ~/.config/i3/scripts/i3exit.sh logout
-# 	bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot
-# 	bindsym s exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown
-# 
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-#     bindsym $Mod+shift+e mode "default"
-# }
-# bindsym $Mod+shift+e mode "exit"
 
 
 

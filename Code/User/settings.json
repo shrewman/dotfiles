@@ -24,6 +24,8 @@
   "files.autoSave": "afterDelay",
   "explorer.confirmDragAndDrop": false,
 
+  "javascript.inlayHints.parameterNames.enabled": "all",
+
   "vim.leader": " ",
 
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -57,4 +59,6 @@
   ],
   "editor.minimap.enabled": false,
   "window.zoomLevel": 1,
+  "inline-parameters.fontStyle": "normal",
+  "prettier.tabWidth": 4,
 }

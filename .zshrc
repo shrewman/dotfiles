@@ -43,6 +43,7 @@ alias tn="ts-node"
 alias vim="nvim"
 alias мшь="nvim"
 alias sshvm="ssh mike@localhost -p12345"
+alias gittoken="sudo cat ~/.config/github.token | clipcopy"
 
 alias mktar="tar -cvzf"
 #	echo Format: mktar \[archive.tar.gz\] \[source directory\]"
