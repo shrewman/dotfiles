@@ -58,7 +58,7 @@ set $terminal-floating kitty --class="floating"
 
 set $browser		brave-browser
 set $email      	mailspring
-set $file-manager	alacritty --command ranger
+set $file-manager	kitty ranger
 set $ide			code # flatpak run com.visualstudio.code 
 set $office			onlyoffice-desktopeditors
 set $photo-editor	flatpak run org.gimp.GIMP
@@ -70,7 +70,7 @@ bindsym $Mod+Shift+Return exec $terminal-floating
 
 bindsym $Alt+B exec --no-startup-id $browser
 bindsym $Alt+C exec --no-startup-id $ide
-bindsym $Alt+D exec --no-startup-id flatpak run com.discordapp.Discord
+bindsym $Alt+D exec --no-startup-id Discord
 # bindsym $Alt+E exec --no-startup-id $email
 bindsym $Alt+F exec --no-startup-id $file-manager
 bindsym $Alt+G exec --no-startup-id $photo-editor
@@ -117,7 +117,7 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 # exec --no-startup-id ~/scripts/autolock.sh User
 
 exec sleep 5; zathura ~/onaft/vereitina.pdf
-# exec ~/.config/conky/start.sh -t
+exec ~/.config/conky/start.sh -t
 # exec --no-startup-id flatpak run org.telegram.desktop
 
 set $wallpaper /home/mike/Pictures/wallpapers/2002367.jpg
