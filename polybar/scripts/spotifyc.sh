@@ -119,6 +119,7 @@ while (( $# > 0 )); do
                 # spotify uses 0-65535 for managing it's volume
                 vol="$(( (vol*65535)/100 ))"
 
+				echo $(pactl get-source-volume "$sink")
                 pactl set-sink-input-volume "$sink" "${rel}${vol}"
             fi
 

@@ -31,6 +31,8 @@ plugins=(git node)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
+setopt noautocd
+
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
@@ -50,9 +52,10 @@ alias mktar="tar -cvzf"
 alias untar="tar -xvf"
 #	echo Format: untar \[archive.tar.gz\]"
 
-alias mntwin="sudo mount /dev/nvme0n1p3 /win && echo mounted to /win"
-alias umntwin="sudo umount /dev/nvme0n1p3"
+alias mntwin="sudo mount /dev/nvme0n1p4 /win && echo mounted to /win"
+alias umntwin="sudo umount /dev/nvme0n1p4"
 
+alias xampp="sudo /opt/lampp/manager-linux-x64.run"
 # Config files
 alias conkyrc="nvim -p ~/.config/conky/start.sh \
 	~/.config/conky/system.conf \

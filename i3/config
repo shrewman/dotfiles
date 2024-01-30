@@ -10,8 +10,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10+ 
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+ 
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym XF86TouchpadToggle exec --no-startup-id ~/.config/i3/bin/toggle-touchpad.sh
 
 bindsym $Mod+Shift+R restart
@@ -68,20 +68,22 @@ set $torrent-client transmission-gtk
 bindsym $Mod+Return exec $terminal
 bindsym $Mod+Shift+Return exec $terminal-floating
 
+# bindsym $Alt+E exec --no-startup-id $email
+# bindsym $Alt+Q exec --no-startup-id $torrent-client
 bindsym $Alt+B exec --no-startup-id $browser
 bindsym $Alt+C exec --no-startup-id $ide
 bindsym $Alt+D exec --no-startup-id Discord
-# bindsym $Alt+E exec --no-startup-id $email
 bindsym $Alt+F exec --no-startup-id $file-manager
 bindsym $Alt+G exec --no-startup-id $photo-editor
-# bindsym $Alt+Q exec --no-startup-id $torrent-client
+bindsym $Alt+O exec --no-startup-id flatpak run md.obsidian.Obsidian
 bindsym $Alt+S exec --no-startup-id flatpak run com.spotify.Client
 bindsym $Alt+T exec --no-startup-id flatpak run org.telegram.desktop
 bindsym $Alt+Z exec --no-startup-id flatpak run us.zoom.Zoom
 bindsym $Mod+Shift+M exec --no-startup-id pavucontrol
 
-# bindsym $Alt+O exec --no-startup-id $office
+bindsym $Alt+E exec zenity --entry | clipcopy
 
+# bindsym $Alt+O exec --no-startup-id $office
 # Rofi 
 # set $rofi-launcher "~/.config/rofi/scripts/rofi-apps"
 # set $rofi-power    "~/.config/rofi/scripts/rofi-power"
@@ -116,6 +118,7 @@ exec easyeffects --gapplication-service
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b 
 # exec --no-startup-id ~/scripts/autolock.sh User
 
+exec flatpak run md.obsidian.Obsidian
 exec sleep 5; zathura ~/onaft/vereitina.pdf
 exec ~/.config/conky/start.sh -t
 # exec --no-startup-id flatpak run org.telegram.desktop
@@ -140,6 +143,8 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+bindsym $Alt+Tab exec ~/.config/i3/bin/alt-tab.py
 
 # Focus workspace $num
 bindsym $Mod+1 workspace number $ws1
@@ -207,6 +212,7 @@ for_window [class="DesktopEditors"] move to workspace $ws5
 
 # workspace 6 for editing photo, video and audio
 assign [class="Gimp"] $ws6
+assign [class="Inkscape"] $ws6
 assign [class="krita"] $ws6
 assign [class="Audacity"] $ws6
 assign [class="Kdenlive"] $ws6
@@ -220,6 +226,8 @@ assign [class="isaac-ng.exe"] $ws7
 assign [class="Bottles"] $ws7
 assign [class="org-tlauncher-tlauncher-rmo-TLauncher"] $ws7
 assign [class="Minecraft*"] $ws7
+assign [class="battle.net.exe"] $ws7
+assign [class="hearthstone.exe"] $ws7
 
 # workspace 8 for virtual machines
 assign [class="VirtualBox Manager"] $ws8
@@ -259,6 +267,7 @@ for_window [class="Steam" title="Friend List"] floating enable
 for_window [class="Steam" title="Steam - News"] kill
 
 for_window [class="kcolorchooser"] sticky enable
+for_window [class="TelegramDesktop" title=" "] sticky enable
 
 for_window [class="^zoom$" title="^.*(?<!Zoom Meeting)$"] floating enable, move position 125px 125px
 
@@ -336,18 +345,18 @@ bindsym $Mod+A exec ~/.config/i3/bin/timemode "launch" 1
 
 # Touchpad configuration
 # xinput list-props "ELAN1200:00 04F3:30BA Touchpad"
-exec --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Tapping Enabled" 1
-exec --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Natural Scrolling Enabled" 1
-exec --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Middle Emulation Enabled" 1
-exec --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Tapping Drag Enabled" 0
-exec --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Tapping Drag Enabled" 0
-exec --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Accel Speed" 0.4
+exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Middle Emulation Enabled" 1
+exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Tapping Drag Enabled" 0
+exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Tapping Drag Enabled" 0
+exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Accel Speed" 0.4
 
 # Keyboard configuration
-exec --no-startup-id "setxkbmap -layout us,ru -option grp:alt_shift_toggle caps:escape"
+exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:alt_shift_toggle caps:escape"
 bindsym $Mod+Control+U exec --no-startup-id ~/.config/i3/bin/toggle-language.sh
 
-exec --no-startup-id xset r rate 300 50
+exec_always --no-startup-id xset r rate 300 50
 # }
 
 
