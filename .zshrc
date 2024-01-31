@@ -57,26 +57,19 @@ alias umntwin="sudo umount /dev/nvme0n1p4"
 
 alias xampp="sudo /opt/lampp/manager-linux-x64.run"
 # Config files
-alias conkyrc="nvim -p ~/.config/conky/start.sh \
-	~/.config/conky/system.conf \
-	~/.config/conky/system-short.conf \
-	~/.config/conky/todo.conf"
-alias i3rc="nvim -p ~/.config/i3/config"
-alias swayrc="nvim -p ~/.config/sway/config"
-alias waybarc="nvim -p ~/.config/waybar/config ~/.config/waybar/style.css"
-alias rofirc="cd ~/.config/rofi/ && ls"
-alias rangerc="nvim -p ~/.config/ranger/rifle.conf \
-					~/.config/ranger/rc.conf"
-alias picomrc="nvim ~/.config/picom/picom.conf"
-alias vimrc="nvim ~/.config/nvim/init.vim"
-alias zathurarc="nvim ~/.config/zathura/zathurarc"
-alias zshrc="nvim ~/.zshrc"
-alias polyrc="nvim -p ~/.config/polybar/config.ini \
-				     ~/.config/polybar/modules.ini \
-		    	     ~/.config/polybar/user_modules.ini \
-					 ~/.config/polybar/colors.ini"
+alias conkyrc="cd ~/.config/conky/ && nvim ."
+alias i3rc="cd ~/.config/i3/ && nvim ./config"
+alias swayrc="cd ~/.config/sway/ && nvim ./config"
+alias waybarc="cd ~/.config/waybar/ && nvim ."
+alias rofirc="cd ~/.config/rofi/ && nvim ."
+alias rangerc="cd ~/.config/ranger/ && nvim ."
+alias picomrc="cd ~/.config/picom/ && nvim ./picom.conf"
+alias vimrc="cd ~/.config/nvim && nvim ."
+alias zathurarc="cd ~/.config/zathura/ && nvim ./zathurarc"
+alias zshrc="cd ~ && nvim .zshrc"
+alias polyrc="cd ~/.config/polybar/ && nvim ."
 
-alias todo="nvim ~/Documents/todo.txt"
+alias todo="cd ~ && nvim ~/Documents/todo.txt"
 alias doc2pdf="unoconv -f pdf"
 
 # Default applications
