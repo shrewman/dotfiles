@@ -8,10 +8,11 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	use { "catppuccin/nvim", as = "catppuccin" }
+	use ( "catppuccin/nvim" )
 
-	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+	use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use ('nvim-treesitter/playground')
+    use ('nvim-treesitter/nvim-treesitter-context')
 
 	use {
 		"ThePrimeagen/harpoon",
@@ -21,12 +22,12 @@ return require('packer').startup(function(use)
 
 	use ('mbbill/undotree')
 	use ('tpope/vim-fugitive')
+    use ('eandrju/cellular-automaton.nvim')
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
 		requires = {
-			--- Uncomment the two plugins below if you want to manage the language servers from neovim
 			{'williamboman/mason.nvim'},
 			{'williamboman/mason-lspconfig.nvim'},
 
