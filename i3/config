@@ -118,8 +118,6 @@ exec easyeffects --gapplication-service
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b 
 # exec --no-startup-id ~/scripts/autolock.sh User
 
-exec flatpak run md.obsidian.Obsidian
-exec sleep 5; zathura ~/onaft/vereitina.pdf
 exec ~/.config/conky/start.sh -t
 # exec --no-startup-id flatpak run org.telegram.desktop
 
