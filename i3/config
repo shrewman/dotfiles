@@ -352,7 +352,7 @@ exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "li
 exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Accel Speed" 0.4
 
 # Keyboard configuration
-exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:alt_shift_toggle caps:escape"
+exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:alt_shift_toggle,caps:escape"
 bindsym $Mod+Control+U exec --no-startup-id ~/.config/i3/bin/toggle-language.sh
 
 exec_always --no-startup-id xset r rate 300 50
