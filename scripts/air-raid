@@ -2,13 +2,12 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 KEY=$(cat $SCRIPT_DIR/air-raid.key)
 
-QUEUE=$(curl -s "https://alerts.com.ua/api/states?short" \
-	-H "X-API-Key:$KEY" |\
-	grep -E '"id":14,"alert":.{4,5}}' -o |\
-	grep -o 'true')
+ALERT=$(curl -s "https://api.alerts.in.ua/v1/alerts/active.json?token=$KEY" | jq '.alerts[] | select(.location_title == "Одеська область")')
 
-if [[ "$QUEUE" == "true" ]]; then
-	echo "Air alert"
+if [[ $? -ne 0 ]]; then
+  echo "Failed to parse"
+elif [[ -n "$ALERT" ]]; then
+  echo "Air alert"
 else
-	echo
+  echo ""
 fi
