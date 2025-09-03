@@ -36,6 +36,9 @@ bindsym $Mod+J focus down
 bindsym $Mod+K focus up
 bindsym $Mod+L focus right
 
+# bindsym  --whole-window --border button8 focus down
+# bindsym  --whole-window --border button9 focus up
+
 # Move focused window
 bindsym $Mod+Shift+H move left
 bindsym $Mod+Shift+J move down
@@ -72,7 +75,7 @@ bindsym $Mod+Shift+Return exec $terminal-floating
 # bindsym $Alt+Q exec --no-startup-id $torrent-client
 bindsym $Alt+B exec --no-startup-id $browser
 bindsym $Alt+C exec --no-startup-id $ide
-bindsym $Alt+D exec --no-startup-id Discord
+bindsym $Alt+D exec --no-startup-id flatpak run com.discordapp.Discord
 bindsym $Alt+F exec --no-startup-id $file-manager
 bindsym $Alt+G exec --no-startup-id $photo-editor
 bindsym $Alt+O exec --no-startup-id flatpak run md.obsidian.Obsidian
@@ -203,10 +206,10 @@ for_window [class="PacketTracer" window_type="dialog"] sticky enable
 assign [class="Blender"] $ws4
 
 # workspace 5 for viewing and editing documents
-for_window [class="libreoffice-startcenter"] move to workspace $ws5
-for_window [class="libreoffice-writer"] move to workspace $ws5
-for_window [class="libreoffice-calc"] move to workspace $ws5
-for_window [class="DesktopEditors"] move to workspace $ws5
+#for_window [class="libreoffice-startcenter"] move to workspace $ws5
+#for_window [class="libreoffice-writer"] move to workspace $ws5
+#for_window [class="libreoffice-calc"] move to workspace $ws5
+#for_window [class="DesktopEditors"] move to workspace $ws5
 
 # workspace 6 for editing photo, video and audio
 assign [class="Gimp"] $ws6
@@ -219,6 +222,7 @@ assign [class="obs" title="OBS*"] $ws6
 
 # workspace 7 for gaming 
 assign [class="Steam"] $ws7
+assign [class="steamwebhelper"] $ws7
 assign [class="steam_app*"] $ws7
 assign [class="isaac-ng.exe"] $ws7
 assign [class="Bottles"] $ws7
@@ -226,6 +230,7 @@ assign [class="org-tlauncher-tlauncher-rmo-TLauncher"] $ws7
 assign [class="Minecraft*"] $ws7
 assign [class="battle.net.exe"] $ws7
 assign [class="hearthstone.exe"] $ws7
+assign [title="Progress"] $ws7
 
 # workspace 8 for virtual machines
 assign [class="VirtualBox Manager"] $ws8
@@ -239,6 +244,7 @@ assign [class="Rhythmbox"] $ws9
 
 # workspace 10 for other trash
 assign [class="zoom"] $ws10
+for_window [class="zoom"] move to workspace $ws10
 # }
 
 
@@ -350,6 +356,7 @@ exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "li
 exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Tapping Drag Enabled" 0
 exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Tapping Drag Enabled" 0
 exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Accel Speed" 0.4
+exec_always --no-startup-id xinput set-prop "ELAN1200:00 04F3:30BA Touchpad" "libinput Disable While Typing Enabled" 0
 
 # Keyboard configuration
 exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:alt_shift_toggle,ctrl:swapcaps"
